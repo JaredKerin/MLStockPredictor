@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stock Prediction Results</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css') }}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Stock Prediction Results</h1>
+      <h2>Precision Score: {{ precision }}</h2>
+      <h3>Prediction Counts:</h3>
+      <ul>
+        {% for key, value in prediction_counts.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+      </ul>
+      <h3>Target Percentages:</h3>
+      <ul>
+        {% for key, value in target_percentages.items() %}
+        <li>{{ key }}: {{ value }}</li>
+        {% endfor %}
+      </ul>
+      <footer>&copy; 2024 Stock Prediction Jared Kerin</footer>
+    </div>
+  </body>
+</html>
